@@ -31,6 +31,7 @@ class _PostsListState extends State<PostsList> {
               return const Center(child: Text('no posts'));
             }
             return ListView.builder(
+              physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return index >= state.posts.length
                     ? BottomLoader()
@@ -55,7 +56,10 @@ class _PostsListState extends State<PostsList> {
   }
 
   void _onScroll() {
-    if (_isBottom) _postBloc.add(PostFetched());
+    if (_isBottom) {
+      print('block changed at ${DateTime.now().millisecond}');  
+      _postBloc.add(PostFetched());
+    }
   }
 
   bool get _isBottom {

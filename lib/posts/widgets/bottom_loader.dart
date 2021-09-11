@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class BottomLoader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: SizedBox(
+    return Center(
+      child: Container(
+        margin: const EdgeInsets.all(20),
         height: 24,
         width: 24,
-        child: CircularProgressIndicator(strokeWidth: 1.5),
+        child: const CircularProgressIndicator(strokeWidth: 2),
       ),
     );
   }

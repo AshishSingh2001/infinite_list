@@ -12,4 +12,11 @@ class SimpleBlocObserver extends BlocObserver {
     print(error);
     super.onError(bloc, error, stackTrace);
   }
+
+  // @override
+  // void onChange(BlocBase bloc, Change change) {
+  //   // TODO: implement onChange
+  //   super.onChange(bloc, change);
+  //   print('block changed at ${DateTime.now().second}');
+  // }
 }

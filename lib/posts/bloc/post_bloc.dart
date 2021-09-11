@@ -74,7 +74,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     TransitionFunction<PostEvent, PostState> transitionFn,
   ) {
     return super.transformEvents(
-      events.throttleTime(const Duration(microseconds: 500)),
+      events.throttleTime(const Duration(microseconds: 1500)),
       transitionFn,
     );
   }
